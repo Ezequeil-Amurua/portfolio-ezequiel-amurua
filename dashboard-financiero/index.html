@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="css/dashboard.css">
   <script src="js/dashboard.js" defer></script>
 </head>
-<body>
+<body class="dashboard-page">
   <nav class="site-nav">
     <div class="nav-inner">
       <a class="brand" href="index.html">
@@ -16,40 +16,60 @@
         <span>EZEQUIEL AMURÚA</span>
       </a>
       <ul class="nav-list">
-        <li><a href="index.html">Inicio &amp; Sobre Mí</a></li>
-        <li><a href="dashboard.html" aria-current="page">Dashboard Financiero</a></li>
+        <li><a href="../index.html">Inicio &amp; Sobre Mí</a></li>
+        <li><a href="index.html" aria-current="page">Dashboard Financiero</a></li>
         <li><a href="proyectos.html">Proyectos Financieros</a></li>
-        <li><a href="contacto.html">Contacto</a></li>
+        <li><a href="../contacto.html">Contacto</a></li>
       </ul>
     </div>
   </nav>
 
-  <header class="dashboard-header">
-    <h1>Dashboard Financiero Personal</h1>
-    <p>Consulta en tiempo real sobre cotizaciones, análisis de mercado y más.</p>
-  </header>
-
   <main class="dashboard-content">
-    <section class="quotes-panel">
-      <h2>Panel de Cotizaciones</h2>
-      <div id="quotes-container">
-        <!-- Aquí se cargarán las cotizaciones en tiempo real -->
+    <header class="dashboard-hero">
+      <div>
+        <span class="eyebrow">Panel de mercado · Argentina</span>
+        <h1>Dashboard Financiero</h1>
+        <p>Una lectura rápida de cotizaciones, renta fija y variables que sigo para tomar decisiones con contexto.</p>
+      </div>
+      <div class="market-status"><span class="status-dot"></span><span id="updated-at">Actualizando mercado</span></div>
+    </header>
+
+    <section class="dashboard-section quotes-section" aria-labelledby="quotes-title">
+      <div class="section-title"><div><span class="section-kicker">Cotizaciones</span><h2 id="quotes-title">Dólar y tasas</h2></div><span class="section-note">ARS · venta</span></div>
+      <div id="quotes-container" class="quote-grid" aria-live="polite">
+        <article class="quote-card loading" data-quote="oficial"><span>Dólar oficial</span><strong>--</strong><small>Consultando API</small></article>
+        <article class="quote-card loading" data-quote="blue"><span>Dólar blue</span><strong>--</strong><small>Consultando API</small></article>
+        <article class="quote-card loading" data-quote="bolsa"><span>Dólar MEP</span><strong>--</strong><small>Consultando API</small></article>
+        <article class="quote-card quote-card-accent"><span>Caución 7 días</span><strong>Referencia</strong><small>Ver tasa vigente en BYMA</small></article>
       </div>
     </section>
 
-    <section class="charts-section">
-      <h2>Gráficos Interactivos</h2>
-      <div id="tradingview-widget-container">
-        <!-- Widget de TradingView se integrará aquí -->
-      </div>
-    </section>
+    <div class="dashboard-columns">
+      <section class="dashboard-section chart-section" aria-labelledby="chart-title">
+        <div class="section-title"><div><span class="section-kicker">Seguimiento</span><h2 id="chart-title">Mercado en movimiento</h2></div><a class="text-link" href="https://www.tradingview.com/" target="_blank" rel="noreferrer">Abrir TradingView ↗</a></div>
+        <div class="chart-frame" id="tradingview-widget-container">
+          <iframe src="https://www.tradingview.com/widgetembed/?symbol=BCBA%3AIMV&interval=D&theme=light&style=1&locale=es&hide_top_toolbar=1&hide_legend=0&saveimage=0&hideideas=1" title="Gráfico del índice Merval" loading="lazy"></iframe>
+        </div>
+      </section>
 
-    <section class="reports-section">
-      <h2>Repositorio de TPs</h2>
-      <p>Aquí podrás acceder a informes en PDF y otros documentos relevantes.</p>
-      <ul id="reports-list">
-        <!-- Lista de informes se generará aquí -->
-      </ul>
+      <aside class="dashboard-section watchlist-section" aria-labelledby="watchlist-title">
+        <div class="section-title"><div><span class="section-kicker">Radar</span><h2 id="watchlist-title">Variables clave</h2></div></div>
+        <ul class="watchlist">
+          <li><span>MERVAL / USD</span><strong>Mercado local</strong></li>
+          <li><span>U.S. 10Y</span><strong>Tasa de referencia</strong></li>
+          <li><span>BTC / USD</span><strong>Activo digital</strong></li>
+          <li><span>Bonos soberanos</span><strong>Renta fija</strong></li>
+        </ul>
+        <a class="panel-link" href="https://www.byma.com.ar/" target="_blank" rel="noreferrer">Consultar BYMA <span>↗</span></a>
+      </aside>
+    </div>
+
+    <section class="dashboard-section reports-section" aria-labelledby="reports-title">
+      <div class="section-title"><div><span class="section-kicker">Trabajo aplicado</span><h2 id="reports-title">Informes y proyectos</h2></div><a class="text-link" href="../proyectos.html">Ver portfolio →</a></div>
+      <div class="report-grid">
+        <a class="report-card report-featured" href="../PDFs/Reporte%20Sanatorio%20Otamendi%20-%20UTN%20FINAL.pdf" target="_blank" rel="noreferrer"><span class="report-type">PDF · Simulación</span><h3>Sanatorio Otamendi</h3><p>Decisión de inversión en caución a 14 días y análisis de riesgo/beneficio.</p><span class="report-action">Abrir informe ↗</span></a>
+        <a class="report-card" href="../proyectos.html"><span class="report-type">Portfolio</span><h3>Proyectos financieros</h3><p>Valuación de carteras, práctica bursátil y ejercicios aplicados.</p><span class="report-action">Ver proyectos →</span></a>
+      </div>
     </section>
   </main>
 
