@@ -1,0 +1,34 @@
+{
+  "marketSources": [
+    {
+      "name": "Yahoo Finance",
+      "url": "https://finance.yahoo.com",
+      "description": "Proporciona datos financieros, noticias y análisis de mercado en tiempo real."
+    },
+    {
+      "name": "DolarApi Argentina",
+      "url": "https://dolarapi.com",
+      "description": "API que ofrece cotizaciones del dólar en tiempo real y otros datos económicos."
+    },
+    {
+      "name": "TradingView",
+      "url": "https://www.tradingview.com",
+      "description": "Plataforma de gráficos interactivos y análisis técnico para activos financieros."
+    },
+    {
+      "name": "BYMA",
+      "url": "https://www.byma.com.ar",
+      "description": "Bolsas y Mercados Argentinos, ofrece información oficial sobre cotizaciones y operaciones."
+    },
+    {
+      "name": "CNV",
+      "url": "https://www.cnv.gov.ar",
+      "description": "Comisión Nacional de Valores, regula el mercado de valores en Argentina."
+    },
+    {
+      "name": "El Economista",
+      "url": "https://www.eleconomista.com.ar",
+      "description": "Noticias y análisis sobre economía y finanzas en Argentina."
+    }
+  ]
+}
